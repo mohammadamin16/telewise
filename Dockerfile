@@ -1,14 +1,16 @@
+# build environment
 FROM node:18-alpine3.17 as build
-
 WORKDIR /app
-COPY . /app
+COPY . .
+#RUN yarn
+#RUN yarn build
+# production environment
 
-RUN yarn install
-RUN yarn build
-
-FROM ubuntu
-RUN apt-get update
-RUN apt-get install nginx -y
-COPY --from=build /app/dist /var/www/html/
-EXPOSE 80
-CMD ["nginx","-g","daemon off;"]
+FROM nginx:latest
+COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/build /usr/share/nginx/html
+RUN touch /var/run/nginx.pid
+RUN chown -R nginx:nginx /var/run/nginx.pid /usr/share/nginx/html /var/cache/nginx /var/log/nginx /etc/nginx/conf.d
+USER nginx
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
