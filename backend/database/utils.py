@@ -17,7 +17,7 @@ def connect_to_db():
     db.init_app(app)
 
 def clean_db():
-    selected_db = connect(config_map['mongodb_name'])
+    selected_db = connect(config_map['mongodb_name'], alias="mydb-alias")
     selected_db.drop_database(config_map['mongodb_name'])
     print('Dtabase cleaned successfully')
 
