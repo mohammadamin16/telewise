@@ -10,15 +10,17 @@ class UserApi(Resource):
 
     def post(self):
         body = request.get_json()
-        peer = Peer()
-        peer.chat_id = body['chat']
-        peer.user_id = body['userId']
-        peer.save()
-        return {'msg': 'done'}, 200
-
-
-
-
+        if 'chat' in body and 'name' in body and 'userId' in body:
+            if 'userId already exists in chat':
+                return {'error': 'user already exists'}, 409
+            else:
+                peer = Peer()
+                peer.chat_id = body['chat']
+                peer.user_id = body['userId']
+                peer.save()
+                return {'msg': 'done'}, 200
+        else:
+            return {"Error": "Missing Arguments (chat or name or userId)"}, 400
 
     
     def get(self):
@@ -28,10 +30,3 @@ class UserApi(Resource):
         for user in users_in_peer:
             li.append(user.user_id)
         return {"{}".format(body['chat']): li}, 200
-
-
-
-
-
-
-
