@@ -1,5 +1,5 @@
 services:
-  web:
-    build: web
-    ports:
-      - "80:80"
+  # web:
+  #   build: web
+  #   ports:
+  #     - "3000:80"

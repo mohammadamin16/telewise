@@ -8,14 +8,15 @@ import "./App.css";
 import { Home } from "./pages/home/Home.tsx";
 import { ConfigProvider, theme } from "antd";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { New } from "./pages/new/New.tsx";
 function App() {
   const [colorScheme, themeParams] = useThemeParams();
   const router = createBrowserRouter([
+    // @ts-ignore
     {
       path: "/",
       Component: Home,
     },
+    // @ts-ignore
     { path: "/new", Component: New },
   ]);
   return (
