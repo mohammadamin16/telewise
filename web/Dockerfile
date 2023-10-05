@@ -1,17 +1,16 @@
 # build environment
 FROM node:18-alpine3.17 as build
 WORKDIR .
-COPY  web/package.json .
-COPY web/yarn.lock .
+COPY  package.json .
+COPY yarn.lock .
 RUN yarn add global serve
 RUN yarn --frozen-lockfile install
 COPY . .
-WORKDIR web
 RUN yarn build 
 
 # production environment
 FROM nginx:stable-alpine
-COPY --from=build web/dist /usr/share/nginx/html
+COPY --from=build dist /usr/share/nginx/html
 # new
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
