@@ -6,10 +6,10 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ["react-router-dom", "react-swipe-to-delete-ios"],
+      external: ["react-router-dom"],
     },
   },
   optimizeDeps: {
-    exclude: ["react-router-dom", "react-swipe-to-delete-ios"],
+    exclude: ["react-router-dom"],
   },
 });

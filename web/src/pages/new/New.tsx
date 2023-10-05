@@ -3,7 +3,6 @@ import { Input, Radio, RadioChangeEvent, Typography } from "antd";
 import Title from "antd/es/typography/Title";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SwipeToDelete from "react-swipe-to-delete-ios";
 
 import styles from "./new.module.css";
 const { Text, Link } = Typography;
