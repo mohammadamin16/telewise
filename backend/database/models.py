@@ -2,6 +2,15 @@ from .db import db
 import datetime
 
 
+class Chat(db.Document):
+    chat_id = db.StringField(required=True, unique=True)
+
+
+class User(db.Document):
+    name = db.StringField(required=True)
+    user_id = db.StringField(required=True, unique=True)
+
+
 class Transaction(db.Document):
     transaction_id = db.IntField(required=True)
     title = db.StringField(required=True)
@@ -25,13 +34,3 @@ class Peer(db.Document):
     chat = db.ReferenceField(Chat, required=True)
     user = db.ReferenceField(User, required=True)
     date = db.DateTimeField(required=True, default=datetime.datetime.utcnow)
-
-
-class Chat(db.Document):
-    chat_id = db.StringField(required=True)
-
-
-class User(db.Document):
-    name = db.StringField(required=True)
-    user_id = db.StringField(required=True)
-
