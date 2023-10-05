@@ -7,16 +7,20 @@ from mongoengine.queryset.visitor import Q
 
 class BalanceApi(Resource):
     def get(self):
-        return {
-            'msg':
-                [
-                    {
-                        'userId' : "1001",
-                        "amount" : 500
-                    },
-                    {
-                        'userId' : "1003",
-                        "amount" : 200
-                    }
-                ]
-        }, 200
+        body = request.get_json()
+        if 'chat' in body and 'userId' in body:
+            return {
+                '{}'.format(body['userId']):
+                    [
+                        {
+                            'userId' : "1001",
+                            "amount" : -500
+                        },
+                        {
+                            'userId' : "1003",
+                            "amount" : 200
+                        }
+                    ]
+            }, 200
+        else:
+            return {"Error": "Missing Argument (chat or userId)"}, 400

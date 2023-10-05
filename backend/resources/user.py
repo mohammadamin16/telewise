@@ -1,6 +1,5 @@
 from flask import Response, request
 from database.models import Peer, User, Chat
-# from database.models import Peer
 from flask_restful import Resource
 # from flask_jwt_extended import jwt_required, get_jwt_identity
 # from utils.user import get_user_id
@@ -35,15 +34,22 @@ class UserApi(Resource):
     
     def get(self):
         body = request.get_json()
-        if 'chat' in body:
+        user_has_access = False
+        if 'chat' in body and 'userId' in body:
+            requested_user_id = body['userId']
             requested_chat = Chat.objects.filter(chat_id = body['chat'])
             if len(requested_chat) > 0:
                 users_in_peer = Peer.objects.filter(chat=requested_chat[0])
                 li = []
                 for user_in_peer in users_in_peer:
+                    if user_in_peer.user.user_id == requested_user_id:
+                        user_has_access = True
                     li.append({"userId": user_in_peer.user.user_id, "name": user_in_peer.user.name})
-                return {"{}".format(body['chat']): li}, 200
+                if user_has_access:
+                    return {"{}".format(body['chat']): li}, 200
+                else:
+                    return {"Error": "You are not a member of this group."}, 403
             else:
                 return {"Error": "Chat does not exit."}, 404
         else:
-            return {"Error": "Missing Argument (chat)"}, 400
+            return {"Error": "Missing Argument (chat or userId)"}, 400

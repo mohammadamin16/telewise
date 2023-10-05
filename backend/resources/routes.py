@@ -3,7 +3,6 @@ from .user import UserApi
 from .pay import PayApi
 from .balance import BalanceApi
 from .test import testApi
-from json import JSONEncoder
 
 def initialize_routes(api, routing_prefix):
     api.add_resource(TransactionApi, routing_prefix + '/transaction')
