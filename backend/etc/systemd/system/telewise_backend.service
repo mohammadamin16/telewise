@@ -1,0 +1,10 @@
+[Unit]
+Description=uWSGI instance to serve TeleWise Backend
+After=network.target
+
+[Service]
+User=ubuntu
+Group=root
+WorkingDirectory=/home/ubuntu/workspace/telewise/backend
+Environment="PATH=/home/ubuntu/workspace/telewise/backend/venv/bin"
+ExecStart=/home/ubuntu/.local/bin/uwsgi --ini telewise.ini
