@@ -1,5 +1,5 @@
 # build environment
-FROM node:18-alpine3.17 as build
+FROM node:18.17.1 as build
 WORKDIR .
 COPY  package.json .
 COPY yarn.lock .
