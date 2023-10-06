@@ -6,10 +6,10 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ["react-router-dom"],
+      external: ["react-router-dom", "axios"],
     },
   },
   optimizeDeps: {
-    exclude: ["react-router-dom"],
+    exclude: ["react-router-dom", "axios"],
   },
 });

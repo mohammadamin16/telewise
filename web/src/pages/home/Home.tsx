@@ -8,8 +8,23 @@ import {
 } from "@vkruglikov/react-telegram-web-app";
 import { CustomerServiceOutlined, PlusCircleOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import {
+  addTransaction,
+  getBalance,
+  getTransaction,
+  pay,
+  registerUser,
+} from "../../core/api";
 
 export const Home = () => {
+  useEffect(() => {
+    // registerUser();
+    // getTransaction();
+    getBalance();
+    // pay();
+    // addTransaction();
+  }, []);
   const navigate = useNavigate();
   const handleGoToNewPage = () => {
     navigate("/new");
