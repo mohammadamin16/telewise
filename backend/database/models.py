@@ -29,6 +29,11 @@ class Payment(db.Document):
     amount = db.IntField(required=True)
     date = db.DateTimeField(required=True, default=datetime.datetime.utcnow)
 
+class Balance(db.Document):
+    chat = db.ReferenceField(Chat, required=True)
+    payer_user = db.ReferenceField(User, required=True)
+    receiver_user = db.ReferenceField(User, required=True)
+    amount = db.IntField(required=True)
 
 class Peer(db.Document):
     chat = db.ReferenceField(Chat, required=True)
