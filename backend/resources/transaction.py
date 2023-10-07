@@ -11,6 +11,44 @@ def get_next_free_transaction_id():
     except:
         return 1
 
+def add_new_transaction_to_result(result, transaction):
+    result.append(
+        {
+            "transactionId" : transaction.transaction_id,
+            "title" : transaction.title,
+            "description" : transaction.description,
+            "chat" : transaction.chat.chat_id,
+            "userId" : transaction.payer_user.user_id,
+            # "date" : transaction.date,
+            "group" : [
+                {
+                    "amount" : transaction.amount,
+                    "userId" : transaction.in_debt_user.user_id,
+                }
+            ]
+        }
+    )
+    return result
+
+
+def fetch_transactions(transactions):
+    result = []
+    result = add_new_transaction_to_result(result, transactions[0])
+    print(result)
+    transactions = transactions[1:]
+    for transaction in transactions:
+        if transaction.transaction_id == result[-1]["transactionId"]:
+            result[-1]["group"].append(
+                {
+                    "amount" : transaction.amount,
+                    "userId" : transaction.in_debt_user.user_id,
+                }
+            )
+        else:
+            result = add_new_transaction_to_result(result, transaction)
+    return result
+
+
 class TransactionApi(Resource):
     # decorators = [jwt_required()]
 
@@ -57,7 +95,15 @@ class TransactionApi(Resource):
     def get(self):
         body = request.get_json()
         if 'chat' in body and 'userId' in body:
-            user_transactions = Transaction.objects((Q(payer_user_id=body['userId']) | Q(in_debt_user_id=body['userId'])) & Q(in_debt_user_id=body['userId']))
-            return {'msg': 'fetched successfully{}'.format(len(user_transactions))}, 200
+            requested_chat = Chat.objects.filter(chat_id=body['chat'])
+            if len(requested_chat) == 0:
+                return {"Error": "Chat not found"}, 404
+            else:
+                chat_transactions = Transaction.objects.filter(chat=requested_chat[0])
+                if len(chat_transactions) > 0:
+                    return fetch_transactions(chat_transactions), 200
+                else:
+                    return {'msg': 'No Transactions found'}, 200
+            # user_transactions = Transaction.objects((Q(payer_user_id=body['userId']) | Q(in_debt_user_id=body['userId'])) & Q(in_debt_user_id=body['userId']))
         else:
             return {"Error": "Missing Arguments (chat or userId)"}, 400
