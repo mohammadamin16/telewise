@@ -1,9 +1,29 @@
 from flask import Response, request
-from database.models import Payment, User, Chat
+from database.models import Payment, User, Chat, Balance
 from flask_restful import Resource
 # from flask_jwt_extended import jwt_required, get_jwt_identity
 # from utils.user import get_user_id
 from mongoengine.queryset.visitor import Q
+
+def update_balance(chat, payer_user, receiver_user, amount):
+    balance = Balance.objects.filter(chat=chat, payer_user=payer_user, receiver_user=receiver_user)
+    if len(balance) > 0:
+        balance.amount += amount
+        balance.save()
+        return
+    balance = Balance.objects.filter(chat=chat, payer_user=receiver_user, receiver_user=payer_user)
+    if len(balance) > 0:
+        balance.amount -= amount
+        balance.save()
+        return
+    balance = Balance()
+    balance.chat = chat
+    balance.payer_user = payer_user
+    balance.receiver_user = receiver_user
+    balance.amount = amount
+    balance.save()
+    return
+
 
 class PayApi(Resource):
     # decorators = [jwt_required()]
@@ -34,9 +54,11 @@ class PayApi(Resource):
             
             payment.chat = requested_chat
             payment.payer_user = requested_payer_user
-            payment.receiver_user = requested_receiver_user
+            payment.receiver_user = requested_payer_user
             payment.amount = body['amount']
             payment.save()
+            # Update balance
+            update_balance(requested_chat, requested_payer_user, requested_payer_user, body['amount'])
             return {'msg': 'payment made'}, 200
         else:
             return {"Error": "Missing Arguments (chat or userId or receiverUserId or amount)"}, 400

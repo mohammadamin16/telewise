@@ -1,5 +1,5 @@
 from flask import Response, request
-from database.models import Transaction, Chat, User
+from database.models import Transaction, Chat, User, Balance
 from flask_restful import Resource
 # from flask_jwt_extended import jwt_required, get_jwt_identity
 # from utils.user import get_user_id
@@ -48,6 +48,24 @@ def fetch_transactions(transactions):
             result = add_new_transaction_to_result(result, transaction)
     return result
 
+def update_balance(chat, payer_user, receiver_user, amount):
+    balance = Balance.objects.filter(chat=chat, payer_user=payer_user, receiver_user=receiver_user)
+    if len(balance) > 0:
+        balance.amount += amount
+        balance.save()
+        return
+    balance = Balance.objects.filter(chat=chat, payer_user=receiver_user, receiver_user=payer_user)
+    if len(balance) > 0:
+        balance.amount -= amount
+        balance.save()
+        return
+    balance = Balance()
+    balance.chat = chat
+    balance.payer_user = payer_user
+    balance.receiver_user = receiver_user
+    balance.amount = amount
+    balance.save()
+    return
 
 class TransactionApi(Resource):
     # decorators = [jwt_required()]
@@ -88,6 +106,8 @@ class TransactionApi(Resource):
                 transaction.description = body['description']
                 transaction.amount = user_involved['amount']
                 transaction.save()
+                # Update balance
+                update_balance(requested_chat, requested_payer_user, user_involved['user'], user_involved['amount'])
             return {'msg': 'transaction successfully added'}, 200
         else:
             return {"Error": "Missing Arguments (title or description or chat or userId or userId or amount)"}, 400
