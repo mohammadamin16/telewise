@@ -51,13 +51,21 @@ def fetch_transactions(transactions):
 def update_balance(chat, payer_user, receiver_user, amount):
     balance = Balance.objects.filter(chat=chat, payer_user=payer_user, receiver_user=receiver_user)
     if len(balance) > 0:
+        balance = balance[0]
         balance.amount += amount
-        balance.save()
+        if balance.amount == 0:
+            balance.delete()
+        else:
+            balance.save()
         return
     balance = Balance.objects.filter(chat=chat, payer_user=receiver_user, receiver_user=payer_user)
     if len(balance) > 0:
+        balance = balance[0]
         balance.amount -= amount
-        balance.save()
+        if balance.amount == 0:
+            balance.delete()
+        else:
+            balance.save()
         return
     balance = Balance()
     balance.chat = chat
