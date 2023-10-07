@@ -20,17 +20,28 @@ class Transaction(db.Document):
     in_debt_user = db.ReferenceField(User, required=True)
     amount = db.IntField(required=True)
     date = db.DateTimeField(required=True, default=datetime.datetime.utcnow)
-
+    meta = {'ordering': ['-transaction_id']}
 
 class Payment(db.Document):
     chat = db.ReferenceField(Chat, required=True)
-    payer_user = db.StringField(required=True)
-    receiver_user = db.StringField(required=True)
+    payer_user = db.ReferenceField(User, required=True)
+    receiver_user = db.ReferenceField(User, required=True)
     amount = db.IntField(required=True)
     date = db.DateTimeField(required=True, default=datetime.datetime.utcnow)
 
+class Balance(db.Document):
+    chat = db.ReferenceField(Chat, required=True)
+    payer_user = db.ReferenceField(User, required=True)
+    receiver_user = db.ReferenceField(User, required=True)
+    amount = db.IntField(required=True)
 
 class Peer(db.Document):
     chat = db.ReferenceField(Chat, required=True)
     user = db.ReferenceField(User, required=True)
     date = db.DateTimeField(required=True, default=datetime.datetime.utcnow)
+
+class R(db.Document):
+    name = db.StringField(required=True)
+
+class B(db.Document):
+    rfe = db.ReferenceField(R, required=True)

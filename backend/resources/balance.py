@@ -1,31 +1,45 @@
 from flask import Response, request
-# from database.models import Post
+from database.models import Payment, User, Chat, Balance
 from flask_restful import Resource
 # from flask_jwt_extended import jwt_required, get_jwt_identity
 # from utils.user import get_user_id
 from mongoengine.queryset.visitor import Q
 
+def get_chat_balances(positive_balances, negative_balances):
+    result = []
+    for balance in positive_balances:
+        result.append(
+            {
+                "userId" : balance.receiver_user.user_id,
+                "amount" : balance.amount
+            }
+        )
+    for balance in negative_balances:
+        result.append(
+            {
+                "userId" : balance.payer_user.user_id,
+                "amount" : balance.amount * -1
+            }
+        )
+    return result
+
 class BalanceApi(Resource):
     def get(self):
-        return {'msg': 'balances'}, 200
-        # page = request.args.get("page")
-        # limit = request.args.get("limit")
-        # tags = request.args.getlist("tags")
-        # query = Q(active=True)
-        # for t in tags:
-        #     query = query & Q(tags=t)
-        # # print(query)
-        # if page and limit:
-        #     page = (int) (page)
-        #     limit = (int) (limit)
-        #     start_index = (page - 1) * limit
-        #     end_index = page * limit
-        # else:
-        #     start_index = 0
-        #     end_index = 20
-        # posts = get_posts(Post.objects(query)[start_index:end_index])
-        # return {
-        #     "posts" : posts,
-        #     "hasNext" : len(Post.objects(query)[end_index:end_index+1]) > 0
-        # }, 200
-    
+        body = request.get_json()
+        if 'chat' in body and 'userId' in body:
+            requested_chat = Chat.objects.filter(chat_id = body['chat'])
+            if len(requested_chat)>0:
+                requested_user = User.objects.filter(user_id = body['userId'])
+                if len(requested_user)>0:
+                    # check if user is a member in this group
+                    # debtor
+                    # creditor
+                    positive_balances = Balance.objects.filter(chat=requested_chat[0], payer_user=requested_user[0])
+                    negative_balances = Balance.objects.filter(chat=requested_chat[0], receiver_user=requested_user[0])
+                    return get_chat_balances(positive_balances, negative_balances), 200
+                else:
+                    return {"Error": "User does not exit."}, 404
+            else:
+                return {}, 200
+        else:
+            return {"Error": "Missing Argument (chat or userId)"}, 400
