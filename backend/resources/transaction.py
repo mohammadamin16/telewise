@@ -121,9 +121,10 @@ class TransactionApi(Resource):
             return {"Error": "Missing Arguments (title or description or chat or userId or userId or amount)"}, 400
 
     def get(self):
-        body = request.get_json()
-        if 'chat' in body and 'userId' in body:
-            requested_chat = Chat.objects.filter(chat_id=body['chat'])
+        userId_param = request.args.get('userId')
+        chat_param = request.args.get('chat')
+        if userId_param and chat_param:
+            requested_chat = Chat.objects.filter(chat_id=chat_param)
             if len(requested_chat) == 0:
                 return {"Error": "Chat not found"}, 404
             else:

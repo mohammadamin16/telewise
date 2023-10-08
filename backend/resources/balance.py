@@ -25,11 +25,12 @@ def get_chat_balances(positive_balances, negative_balances):
 
 class BalanceApi(Resource):
     def get(self):
-        body = request.get_json()
-        if 'chat' in body and 'userId' in body:
-            requested_chat = Chat.objects.filter(chat_id = body['chat'])
+        userId_param = request.args.get('userId')
+        chat_param = request.args.get('chat')
+        if userId_param and chat_param:
+            requested_chat = Chat.objects.filter(chat_id = chat_param)
             if len(requested_chat)>0:
-                requested_user = User.objects.filter(user_id = body['userId'])
+                requested_user = User.objects.filter(user_id = userId_param)
                 if len(requested_user)>0:
                     # check if user is a member in this group
                     # debtor
