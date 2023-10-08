@@ -1,0 +1,562 @@
+{
+	"info": {
+		"_postman_id": "bf583b85-916e-451d-b733-2e10e28811b3",
+		"name": "Telewise API structure",
+		"description": "Telegram WebBot Contest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13254028"
+	},
+	"item": [
+		{
+			"name": "Get Users of a Group with their names",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/{{baseURL}}/user?userId=1001&chat=1",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"{{baseURL}}",
+						"user"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1001"
+						},
+						{
+							"key": "chat",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Users of a Group with their names",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN}}/{{baseURL}}/user?userId=1001&chat=1",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"{{baseURL}}",
+								"user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1001"
+								},
+								{
+									"key": "chat",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.2.2 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 08 Oct 2023 18:34:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "338"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"1\": [\n        {\n            \"userId\": \"1005\",\n            \"name\": \"Reza\"\n        },\n        {\n            \"userId\": \"1001\",\n            \"name\": \"Amin\"\n        },\n        {\n            \"userId\": \"1002\",\n            \"name\": \"Hossein\"\n        },\n        {\n            \"userId\": \"1003\",\n            \"name\": \"Morteza\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Register user to group",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chat\" : \"1\",\n    \"name\" : \"Ali\",\n    \"userId\" : \"1001\",\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/{{baseURL}}/user",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"{{baseURL}}",
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register user to group",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chat\" : \"1\",\n    \"name\" : \"Ali\",\n    \"userId\" : \"1001\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DOMAIN}}/{{baseURL}}/user",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"{{baseURL}}",
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.2.2 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 08 Oct 2023 18:37:59 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"done\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Check if server is alive",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/{{baseURL}}/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"{{baseURL}}",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get transactions of a chat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/{{baseURL}}/user?userId=1001&chat=1",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"{{baseURL}}",
+						"user"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1001"
+						},
+						{
+							"key": "chat",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get transactions of a chat",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN}}/{{baseURL}}/transaction?userId=1001&chat=1",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"{{baseURL}}",
+								"transaction"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1001"
+								},
+								{
+									"key": "chat",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.2.2 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 08 Oct 2023 18:41:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "915"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"transactionId\": 2,\n        \"title\": \"IceCream\",\n        \"description\": \"Tochal\",\n        \"chat\": \"1\",\n        \"userId\": \"1005\",\n        \"group\": [\n            {\n                \"amount\": 100,\n                \"userId\": \"1001\"\n            },\n            {\n                \"amount\": 200,\n                \"userId\": \"1002\"\n            },\n            {\n                \"amount\": 200,\n                \"userId\": \"1003\"\n            }\n        ]\n    },\n    {\n        \"transactionId\": 1,\n        \"title\": \"IceCream\",\n        \"description\": \"Tochal\",\n        \"chat\": \"1\",\n        \"userId\": \"1001\",\n        \"group\": [\n            {\n                \"amount\": 50,\n                \"userId\": \"1005\"\n            },\n            {\n                \"amount\": 50,\n                \"userId\": \"1002\"\n            },\n            {\n                \"amount\": 100,\n                \"userId\": \"1003\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get balances of a user in chat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/{{baseURL}}/user?userId=1001&chat=1",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"{{baseURL}}",
+						"user"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1001"
+						},
+						{
+							"key": "chat",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get balances of a user in chat",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{DOMAIN}}/{{baseURL}}/user?userId=1001&chat=1",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"{{baseURL}}",
+								"user"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1001"
+								},
+								{
+									"key": "chat",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.2.2 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 08 Oct 2023 18:45:50 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "338"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"1\": [\n        {\n            \"userId\": \"1005\",\n            \"name\": \"Reza\"\n        },\n        {\n            \"userId\": \"1001\",\n            \"name\": \"Amin\"\n        },\n        {\n            \"userId\": \"1002\",\n            \"name\": \"Hossein\"\n        },\n        {\n            \"userId\": \"1003\",\n            \"name\": \"Morteza\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Add a new transactions to a chat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"transactionId\": 1,\n        \"title\": \"IceCream\",\n        \"description\": \"Tochal\",\n        \"chat\": \"1\",\n        \"userId\": \"1001\",\n        \"amount\" : 200,\n        \"group\": [\n            {\n                \"amount\": 50,\n                \"userId\": \"1005\"\n            },\n            {\n                \"amount\": 50,\n                \"userId\": \"1002\"\n            },\n            {\n                \"amount\": 100,\n                \"userId\": \"1003\"\n            }\n        ]\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/{{baseURL}}/transaction",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"{{baseURL}}",
+						"transaction"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add a new transactions to a chat",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"IceCream\",\n    \"description\": \"Tochal\",\n    \"chat\": \"1\",\n    \"userId\": \"1001\",\n    \"amount\" : 200,\n    \"group\": [\n        {\n            \"amount\": 50,\n            \"userId\": \"1005\"\n        },\n        {\n            \"amount\": 50,\n            \"userId\": \"1002\"\n        },\n        {\n            \"amount\": 100,\n            \"userId\": \"1003\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DOMAIN}}/{{baseURL}}/transaction",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"{{baseURL}}",
+								"transaction"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.2.2 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 08 Oct 2023 18:41:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "915"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"transaction successfully added\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add a new payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chat\" : \"1\",\n    \"userId\" : \"1001\",\n    \"receiverUserId\" : \"1002\",\n    \"amount\" : 50\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/{{baseURL}}/pay",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"{{baseURL}}",
+						"pay"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add a new payment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chat\" : \"1\",\n    \"userId\" : \"1001\",\n    \"receiverUserId\" : \"1002\",\n    \"amount\" : 50\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{DOMAIN}}/{{baseURL}}/pay",
+							"host": [
+								"{{DOMAIN}}"
+							],
+							"path": [
+								"{{baseURL}}",
+								"pay"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.2.2 Python/3.8.9"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 08 Oct 2023 18:49:23 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"payment made\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "api/v1"
+		},
+		{
+			"key": "DOMAIN",
+			"value": "http://localhost:5000"
+		}
+	]
+}
