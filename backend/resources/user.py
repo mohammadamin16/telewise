@@ -33,11 +33,13 @@ class UserApi(Resource):
 
     
     def get(self):
-        body = request.get_json()
+        # body = request.get_json()
         user_has_access = False
-        if 'chat' in body and 'userId' in body:
-            requested_user_id = body['userId']
-            requested_chat = Chat.objects.filter(chat_id = body['chat'])
+        userId_param = request.args.get('userId')
+        chat_param = request.args.get('chat')
+        if userId_param and chat_param:
+            requested_user_id = userId_param
+            requested_chat = Chat.objects.filter(chat_id = chat_param)
             if len(requested_chat) > 0:
                 users_in_peer = Peer.objects.filter(chat=requested_chat[0])
                 li = []
@@ -46,7 +48,7 @@ class UserApi(Resource):
                         user_has_access = True
                     li.append({"userId": user_in_peer.user.user_id, "name": user_in_peer.user.name})
                 if user_has_access:
-                    return {"{}".format(body['chat']): li}, 200
+                    return {"{}".format(chat_param): li}, 200
                 else:
                     return {"Error": "You are not a member of this group."}, 403
             else:
