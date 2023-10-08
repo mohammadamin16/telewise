@@ -3,7 +3,6 @@ FROM node:18.17.1 as build
 WORKDIR .
 COPY  package.json .
 COPY yarn.lock .
-RUN yarn add global serve
 RUN yarn --frozen-lockfile install
 COPY . .
 RUN yarn build 

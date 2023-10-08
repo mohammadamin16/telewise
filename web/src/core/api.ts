@@ -1,11 +1,23 @@
-// @ts-nocheck
 import axios from "axios";
-const BASE_URL = "https://9478-5-62-203-23.ngrok-free.app/api/v1";
-export const registerUser = () => {
+// const BASE_URL = "http://localhost:5001/api/v1";
+const BASE_URL = "/api/v1";
+
+export const pingServer = () => {
+  axios
+    .get(BASE_URL + "/")
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+};
+export const registerUser = (chatId: string, userId: string, name: string) => {
   axios
     .post(BASE_URL + "/user", {
-      chat: "1",
-      userId: "1001",
+      chat: chatId,
+      userId: userId,
+      name: name,
     })
     .then(function (response) {
       console.log(response);
@@ -18,7 +30,7 @@ export const registerUser = () => {
 export const getTransaction = () => {
   axios
     .get(BASE_URL + "/transaction", {
-      params: {},
+      data: { chat: "1" },
       //   data: {
       //     chat: "1",
       //     userId: "1003",
@@ -48,6 +60,7 @@ export const getBalance = () => {
       console.log(error);
     });
 };
+
 export const pay = () => {
   axios
     .post(BASE_URL + "/pay", {
@@ -64,25 +77,16 @@ export const pay = () => {
     });
 };
 
-export const addTransaction = () => {
+export const addTransaction = (data: {
+  chat: string;
+  userId: string;
+  amount: number;
+  group: { userId: string; amount: number }[];
+  title: string;
+  description: string;
+}) => {
   axios
-    .post(BASE_URL + "/transaction", {
-      chat: "1",
-      userId: "1003",
-      amount: 500,
-      group: [
-        {
-          userId: "1000",
-          amount: 100,
-        },
-        {
-          userId: "1001",
-          amount: 400,
-        },
-      ],
-      title: "Food",
-      description: "VCafe",
-    })
+    .post(BASE_URL + "/transaction", { ...data })
     .then(function (response) {
       console.log("add transaction", response);
     })

@@ -4,9 +4,16 @@ import styles from "./home.module.css";
 import {
   MainButton,
   useShowPopup,
+  InitDataUnsafe,
+  useInitData,
   ThemeParams,
+  useThemeParams,
 } from "@vkruglikov/react-telegram-web-app";
-import { CustomerServiceOutlined, PlusCircleOutlined } from "@ant-design/icons";
+import {
+  CustomerServiceOutlined,
+  PlusCircleOutlined,
+  PlusOutlined,
+} from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import {
@@ -14,25 +21,37 @@ import {
   getBalance,
   getTransaction,
   pay,
+  pingServer,
   registerUser,
 } from "../../core/api";
+import { Button, theme } from "antd";
+
+const { useToken } = theme;
+
+import { getUnsafeDate } from "../../utils";
+import { useUserData } from "../../hooks/useUserData";
 
 export const Home = () => {
+  const { chatId, name, userId } = useUserData();
+
   useEffect(() => {
-    // registerUser();
+    registerUser(chatId, userId, name);
     // getTransaction();
-    getBalance();
-    // pay();
-    // addTransaction();
-  }, []);
+    // pingServer();
+  }, [chatId, userId, name]);
+
   const navigate = useNavigate();
   const handleGoToNewPage = () => {
     navigate("/new");
   };
+  const { token } = useToken();
+
   return (
     <>
       <div className={styles.header}>
-        <p className={styles.header}>Account Info</p>
+        <p className={styles.title} style={{ color: token.colorTextHeading }}>
+          Account Info
+        </p>
       </div>
       <div className={styles.balanced_row}>
         <p>Balance</p>
@@ -51,9 +70,8 @@ export const Home = () => {
         onClick={handleGoToNewPage}
         shape="circle"
         type="primary"
-        badge={{}}
-        style={{ right: 20 }}
-        icon={<PlusCircleOutlined />}
+        style={{ right: 20, width: 50, height: 50 }}
+        icon={<PlusOutlined />}
       />
     </>
   );
