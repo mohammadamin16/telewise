@@ -27,3 +27,8 @@ source ./venv/bin/activate
 pip3 install -r requirements.txt
 python3 ./app.py --command run
 ```
+
+## (Optional) setup app using docker
+```
+  docker compose up
+```
