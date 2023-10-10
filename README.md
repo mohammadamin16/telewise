@@ -1,4 +1,10 @@
-# Telegram WebBot Contest
+# TeleWise
+the splitwise alternative for telegram
+
+ever had to manage your expenses with your firends in chat?
+It's not the easiest thing, there are solutions outside of telegram, but with the features that telegram miniapp provides,
+adding transactions and settling up can become easier than ever
+
 
 ## setup frontend
 ```
