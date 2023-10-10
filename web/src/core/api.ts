@@ -46,16 +46,12 @@ export const pay = (data: {
   amount: string;
   receiverUserId: string;
 }) => {
-  axios
-    .post(BASE_URL + "/pay", {
-      ...data,
-    })
-    .then(function (response) {
-      console.log("pay", response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  return axios({
+    method: "post",
+    url: BASE_URL + "/pay",
+
+    data: { ...data },
+  });
 };
 
 export const addTransaction = (data: {
