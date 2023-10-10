@@ -1,4 +1,4 @@
-import { FloatButton } from "antd";
+import { FloatButton, Typography } from "antd";
 import { Transaction } from "../../components/transaction/Transaction";
 import styles from "./home.module.css";
 import {
@@ -10,6 +10,7 @@ import {
   useThemeParams,
   useExpand,
 } from "@vkruglikov/react-telegram-web-app";
+const { Text, Link } = Typography;
 import {
   CustomerServiceOutlined,
   PlusCircleOutlined,
@@ -89,6 +90,11 @@ export const Home = () => {
           <p>{balanceAmount > 0 ? "You owe" : "You lent"}</p>
         </div>
       </div>
+      {users?.length === 0 && (
+        <Text>
+          To being able to use the bot, your frinds have to visit the bot once
+        </Text>
+      )}
       <div className={styles.list}>
         {transactions?.map?.((t) => (
           <Transaction

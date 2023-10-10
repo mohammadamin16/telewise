@@ -58,6 +58,11 @@ export const New = () => {
           New Transaction
         </Title>
       </div>
+      {users?.length === 0 && (
+        <Text>
+          To being able to use the bot, your frinds have to visit the bot once
+        </Text>
+      )}
       <div className={styles.new_transaction}>
         <div className={styles.info_container}>
           <Text>{name}</Text>
@@ -93,14 +98,14 @@ export const New = () => {
         placeholder="description"
       />
 
-      <Radio.Group
+      {/* <Radio.Group
         className={styles.radio_group}
         onChange={onChange}
         value={type}
       >
         <Radio value={ShareType.Equally}>{ShareType.Equally}</Radio>
         <Radio value={ShareType}>{ShareType.NotEqually}</Radio>
-      </Radio.Group>
+      </Radio.Group> */}
 
       {users.map((user) => (
         <div className={styles.member}>
@@ -111,6 +116,7 @@ export const New = () => {
           <div className={styles.amount_input}>
             <Input
               type="number"
+              required
               size={"middle"}
               onChange={(e) => {
                 changeAmounts(user.userId, e.target.value);
