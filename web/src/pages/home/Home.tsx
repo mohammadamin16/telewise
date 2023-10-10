@@ -15,13 +15,13 @@ import {
   PlusOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   addTransaction,
   getBalance,
   getTransaction,
+  getUsers,
   pay,
-  pingServer,
   registerUser,
 } from "../../core/api";
 import { Button, theme } from "antd";
@@ -34,10 +34,27 @@ import { useUserData } from "../../hooks/useUserData";
 export const Home = () => {
   const { chatId, name, userId } = useUserData();
 
+  const [transactions, setTransactions] = useState<ApiTransction[]>([]);
+  const [users, setUsers] = useState<ApiUser[]>();
+  const [balances, setBalances] = useState<ApiBalance[]>([]);
+  const balanceAmount = useMemo(() => {
+    let amount = 0;
+    balances.map((b) => {
+      amount += b.amount;
+    });
+    return amount;
+  }, [balances]);
   useEffect(() => {
     registerUser(chatId, userId, name);
-    // getTransaction();
-    // pingServer();
+    getBalance(chatId, userId).then((res) => {
+      setBalances(res.data);
+    });
+    getTransaction(chatId, userId).then((res) => {
+      setTransactions(res.data);
+    });
+    getUsers(chatId, userId).then((res) => {
+      setUsers(res?.data?.[chatId] as ApiUser[]);
+    });
   }, [chatId, userId, name]);
 
   const navigate = useNavigate();
@@ -45,6 +62,10 @@ export const Home = () => {
     navigate("/new");
   };
   const { token } = useToken();
+
+  const handleSettleUp = () => {
+    navigate("/pay");
+  };
 
   return (
     <>
@@ -55,16 +76,25 @@ export const Home = () => {
       </div>
       <div className={styles.balanced_row}>
         <p>Balance</p>
+        <Button type="primary" onClick={handleSettleUp}>
+          Settle up
+        </Button>
         <div className={styles.value_container}>
-          <p>+1,7000 $</p>
-          <p>You lent</p>
+          <p>+{balanceAmount} $</p>
+          <p>{balanceAmount > 0 ? "You owe" : "You lent"}</p>
         </div>
       </div>
       <div className={styles.list}>
-        <Transaction />
-        <Transaction />
-        <Transaction />
-        <Transaction />
+        {transactions.map((t) => (
+          <Transaction
+            transction={t}
+            key={t.transactionId}
+            PayerName={
+              users?.find((user) => user.userId === t.userId)?.name || ""
+            }
+            amIPayer={t.userId === userId}
+          />
+        ))}
       </div>
       <FloatButton
         onClick={handleGoToNewPage}
