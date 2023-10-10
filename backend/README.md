@@ -1,7 +1,5 @@
-# Telewise - Splitwise in Telegram
+# ‌Backend
 
-This project is done, in order to participate in Telegram WebBot contest.
-It's a tool for friends and roommates to track bills and other shared expenses, so that everyone gets paid back.
 Project explanation:
 
 * [How to Setup](https://github.com/mohammadamin16/telewise/tree/main/backend/documentation/setup.md)

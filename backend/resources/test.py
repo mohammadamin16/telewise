@@ -17,15 +17,15 @@ class testApi(Resource):
         # for item in b:
         #     print(type(item.rfe.name))
         # R.objects().delete()
-        # Bransaction.objects().delete()
+        Transaction.objects().delete()
         Chat.objects().delete()
         User.objects().delete()
         Transaction.objects().delete()
         Payment.objects().delete()
         Balance.objects().delete()
         Peer.objects().delete()
-        R.objects().delete()
-        B.objects().delete()
+        # R.objects().delete()
+        # B.objects().delete()
         print("Cleared")
         # return {'msg': "B:{}, R:{}".format(len(B.objects()), len(R.objects()))}, 200
         return {'msg': "B:, R:"}, 200
