@@ -5,7 +5,7 @@ ever had to manage your expenses with your firends in chat?
 It's not the easiest thing, there are solutions outside of telegram, but with the features that telegram miniapp provides,
 adding transactions and settling up can become easier than ever
 
-To use it, your have to share [this link](t.me/the_telewise_bot/app) with your friends t.me/the_telewise_bot/app (in a private chat or group chat) 
+To use it, your have to share [this link](https://t.me/the_telewise_bot/app) with your friends t.me/the_telewise_bot/app (in a private chat or group chat) 
 
 ## setup frontend
 ```
