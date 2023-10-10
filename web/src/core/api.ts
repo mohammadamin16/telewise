@@ -1,8 +1,8 @@
 import axios from "axios";
 import { json } from "react-router-dom";
 // const BASE_URL = "https://amintootoonchi.ir/api/v1";
-const BASE_URL = "http://188.121.116.20:5001/api/v1";
-// const BASE_URL = "/api/v1";
+// const BASE_URL = "http://188.121.116.20:5001/api/v1";
+const BASE_URL = "/api/v1";
 
 // export const resetServer = () => {
 //   return axios.get(BASE_URL + "/", { withCredentials: false });
