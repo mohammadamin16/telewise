@@ -9,7 +9,7 @@ def update_balance(chat, payer_user, receiver_user, amount):
     balance = Balance.objects.filter(chat=chat, payer_user=payer_user, receiver_user=receiver_user)
     if len(balance) > 0:
         balance = balance[0]
-        balance.amount += amount
+        balance.amount += int(amount)
         if balance.amount == 0:
             balance.delete()
         else:
