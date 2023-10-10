@@ -1072,3 +1072,236 @@ Traceback (most recent call last):
   File "/home/ubuntu/telewise/telewise/backend/resources/pay.py", line 21, in update_balance
     balance.amount -= amount
 TypeError: unsupported operand type(s) for -=: 'int' and 'str'
+ * Serving Flask app 'main'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://188.121.116.20:5001
+Press CTRL+C to quit
+127.0.0.1 - - [10/Oct/2023 16:38:48] "POST /api/v1/user HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:38:48] "GET /api/v1/balance?userId=1339723882&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:38:48] "GET /api/v1/transaction?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:38:48] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:42:04] "GET /api/v1/transaction?chat=-10&userId=1 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:42:04] "GET /api/v1/user?chat=-10&userId=1 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:42:04] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:42:04] "GET /api/v1/balance?userId=1&chat=-10 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:42:54] "POST /api/v1/user HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:42:54] "GET /api/v1/balance?userId=78087361&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:42:54] "GET /api/v1/transaction?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:42:54] "GET /api/v1/user?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:43:42] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:43:42] "GET /api/v1/balance?userId=1339723882&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:43:42] "GET /api/v1/transaction?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:43:42] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:43:56] "GET /api/v1/transaction?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:43:56] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:43:56] "GET /api/v1/balance?userId=1339723882&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:43:56] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:43:58] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:44:13] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:44:13] "GET /api/v1/transaction?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:44:13] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:44:13] "GET /api/v1/balance?userId=1339723882&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:44:13] "POST /api/v1/transaction HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:44:24] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:44:24] "GET /api/v1/transaction?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:44:24] "GET /api/v1/balance?userId=1339723882&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:44:24] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:44:30] "GET /api/v1/transaction?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:44:30] "GET /api/v1/balance?userId=1339723882&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:44:30] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:44:30] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:44:49] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:44:49] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:44:49] "GET /api/v1/transaction?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:44:49] "GET /api/v1/balance?userId=1339723882&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:44:53] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:12] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:45:12] "GET /api/v1/transaction?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:12] "GET /api/v1/user?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:12] "GET /api/v1/balance?userId=78087361&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:12] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:45:12] "GET /api/v1/transaction?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:12] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:12] "GET /api/v1/balance?userId=1339723882&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:14] "GET /api/v1/user?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:23] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:37] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:45:37] "GET /api/v1/balance?userId=78087361&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:37] "GET /api/v1/user?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:37] "POST /api/v1/transaction HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:37] "GET /api/v1/transaction?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:44] "POST /api/v1/transaction HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:44] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:44] "GET /api/v1/transaction?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:44] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:45:44] "GET /api/v1/balance?userId=1339723882&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:49] "GET /api/v1/user?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:49] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:45:49] "GET /api/v1/balance?userId=78087361&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:45:49] "GET /api/v1/transaction?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:46:05] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:46:05] "GET /api/v1/user?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:46:05] "GET /api/v1/balance?userId=78087361&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:46:05] "GET /api/v1/transaction?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:46:08] "GET /api/v1/user?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:47:23] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:47:23] "GET /api/v1/transaction?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:47:23] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:47:23] "GET /api/v1/balance?userId=1339723882&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:47:24] "GET /api/v1/user?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:47:24] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:47:24] "GET /api/v1/balance?userId=78087361&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:47:24] "GET /api/v1/transaction?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:47:27] "GET /api/v1/user?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:47:37] "GET /api/v1/user?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:47:37] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:47:37] "GET /api/v1/balance?userId=78087361&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:47:38] "GET /api/v1/transaction?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:47:46] "GET /api/v1/user?chat=-2425203294547552023&userId=78087361 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:49:44] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+91.107.175.19 - - [10/Oct/2023 16:53:52] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03µE:\x8fÚcgÔò§PüûP¼×hÃÔ$}±C¢ÿ\x1aïù¼0òÒ')
+91.107.175.19 - - [10/Oct/2023 16:53:52] "  üµE:ÚcgÔò§PüûP¼×hÃÔ$}±C¢ÿïù¼0òÒ Ù²N"TTÒÆÄX_b²J!ôdOk¡o*nôGL8 *" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:53:52] code 400, message Bad request version ('\x0fÎnD\x8dÆ²¬8g\x16\x90g)à¦¬C\x97\x87\x8b\x14¾\x1aÂítÕ\x1a+fS\x00,\x9a\x9a\x13\x01\x13\x02\x13\x03À,À+Ì©À0À/Ì¨À')
+91.107.175.19 - - [10/Oct/2023 16:53:52] "  ü_!OþÞÉ8§²ïYVòáô %T8i	Ã ÎnDÆ²¬8gg)à¦¬C¾ÂítÕ+fS ,À,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:53:53] code 400, message Bad request syntax ('\x16\x03\x01\x00}\x01\x00\x00y\x03\x01"ú\x876\x9d4\x97HciDO\x99ûû\x9b\x8eÀÄÁPà\x8a·Ãos\x10°Q¨\x95\x00\x00\x14À')
+91.107.175.19 - - [10/Oct/2023 16:53:53] " }  y"ú64HciDOûûÀÄÁPà·Ãos°Q¨  À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:53:53] code 400, message Bad request version ('\x88\x00*úú\x13\x01\x13\x02\x13\x03À,À+Ì©À0À/Ì¨À')
+91.107.175.19 - - [10/Oct/2023 16:53:53] "  üåÜÒ*µ©Ì+1}Á ¢iÓÐMU"0Ûù=« ,S¶ÜÝ6?³ÐcÍRÒHºs±Å$knÍÒm *úúÀ,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:53:54] code 400, message Bad request version ('Ç¼ò\x12\x14Âp[ò¼`\x8a\x0f\x98þ\x9aéñ÷À\x00\x14Ðq6J1É\x86$ÈQ\x00,JJ\x13\x01\x13\x02\x13\x03À,À+Ì©À0À/Ì¨À')
+91.107.175.19 - - [10/Oct/2023 16:53:54] "  üòÀÒÁ·	X¢Õ-óI×-<Ú¦ó¨¨f Ç¼òÂp[ò¼`þéñ÷À Ðq6J1É$ÈQ ,JJÀ,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:53:54] code 400, message Bad request syntax ('\x16\x03\x01\x00}\x01\x00\x00y\x03\x01|Ò@+g:¼^q"\x9dÏ:e&T¬(<9#»mÅÔp|\x89\x00\x16\x96Å\x00\x00\x14À')
+91.107.175.19 - - [10/Oct/2023 16:53:54] " }  y|Ò@+g:¼^q"Ï:e&T¬(<9#»mÅÔp| Å  À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:53:55] code 400, message Bad HTTP/0.9 request type ("\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03\x00\x0f\x10°\x93µ\x04mÌûÑ'?Ê\x1b7¤\x955Ãn©&qè¹[ì^Å¸M")
+91.107.175.19 - - [10/Oct/2023 16:53:55] "  ü °µmÌûÑ'?Ê7¤5Ãn©&qè¹[ì^Å¸M GA·|Xv|B~H5k{Öñz`xë=ÙLÏÔÖâ *À,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:53:55] code 400, message Bad request version ('ä\x83`ædl\x83ØNBLË\x914\x17øç\x13\x14©$\x15²ºê\x05\x08c\x8cðu\x95\x00,::\x13\x01\x13\x02\x13\x03À,À+Ì©À0À/Ì¨À')
+91.107.175.19 - - [10/Oct/2023 16:53:55] "  ü5«Î`x"³=weæ]þoöRõÏ;yaû ä`ædlØNBLË4øç©$²ºêcðu ,::À,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:53:56] code 400, message Bad request syntax ('\x16\x03\x01\x00}\x01\x00\x00y\x03\x01·9,¤e\x861\x96aS\x91îàÛ\x99\x92Ä_a1IÝ\x9a\x0eÎç\x89w÷\x8a©~\x00\x00\x14À')
+91.107.175.19 - - [10/Oct/2023 16:53:56] " }  y·9,¤e1aSîàÛÄ_a1IÝÎçw÷©~  À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:53:56] code 400, message Bad request version ('C\x8f¿*\x02!jn´¡0\x80gÐ#Y\x93\x9dFÿX|S&Ë\x8d¥Ë¢\x893Ã\x00*\x8a\x8a\x13\x01\x13\x02\x13\x03À,À+Ì©À0À/Ì¨À')
+91.107.175.19 - - [10/Oct/2023 16:53:56] "  üC×ÚNÉip¥¦®;=HqL·W n+¿d`ìs C¿*!jn´¡0gÐ#YFÿX|S&Ë¥Ë¢3Ã *À,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:53:57] code 400, message Bad request version ('ddö\x91q\x93)³E\x03Ü\x06³7¼\x08Ý-')
+91.107.175.19 - - [10/Oct/2023 16:53:57] "  üêp?oÖÜ~´j¼Ä0Òðò=T*ïû×,*® Ä¬FÛ&zÎÿddöq)³EÜ³7¼Ý-" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:53:58] code 400, message Bad request syntax ('\x16\x03\x01\x00}\x01\x00\x00y\x03\x01')
+91.107.175.19 - - [10/Oct/2023 16:53:58] " }  y" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:11] "GET / HTTP/1.1" 404 -
+91.107.175.19 - - [10/Oct/2023 16:54:12] "GET /favicon.ico HTTP/1.1" 404 -
+91.107.175.19 - - [10/Oct/2023 16:54:27] code 400, message Bad request version ('d«Êã\x8dÀ&\x90@\x113WüH\x06\x98\x00*\x1a\x1a\x13\x01\x13\x02\x13\x03À,À+Ì©À0À/Ì¨À')
+91.107.175.19 - - [10/Oct/2023 16:54:27] "  üV§T%ÃF¶Áéìdý2©ê¢"Ä7NIíñJ »SOíHê¢o1±d«ÊãÀ&@3WüH *À,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:27] code 400, message Bad request version ('Ä]')
+91.107.175.19 - - [10/Oct/2023 16:54:27] "  üã"æ³çíñLkhLÞ$£* ¾Å¢[\] Ä]" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:28] code 400, message Bad request version ('ÿÂ¢~D_*å\x8c\x98\x86\x00\x00\x14À')
+91.107.175.19 - - [10/Oct/2023 16:54:28] " }  y	µÒ}oÅÈ6wk?a1	ÿÂ¢~D_*å  À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:29] code 400, message Bad request version ('\x00*JJ\x13\x01\x13\x02\x13\x03À,À+Ì©À0À/Ì¨À')
+91.107.175.19 - - [10/Oct/2023 16:54:29] "  üË/#|¼¢ÿ¾!ÓßWB²P/8LØ[l Ì ­îXï6°¸ý4÷_ð ç0ÅÖY;î	 *JJÀ,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:30] code 400, message Bad request version ('éTd\x9a\x18\x83|\x0e\x98ôI\x04Ü\x82×\x16$>£\x00,zz\x13\x01\x13\x02\x13\x03À,À+Ì©À0À/Ì¨À')
+91.107.175.19 - - [10/Oct/2023 16:54:30] "  üñ»ÆA, iäpW'yõå¾prÖÞ OmnIÆ[LYýæöòéTd|ôIÜ×$>£ ,zzÀ,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:30] code 400, message Bad request version ('Íúp"D~\x15¤C»µV\x00\x00\x14À')
+91.107.175.19 - - [10/Oct/2023 16:54:30] " }  y(é¨£§ëY½û+t "¸Íúp"D~¤C»µV  À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:31] code 400, message Bad request version ('ÆÝø\x92ÃÀ\x07(\x89|\x8bgÎ\x19þu«ó\x0f0-g,\x00*ÚÚ\x13\x01\x13\x02\x13\x03À,À+Ì©À0À/Ì¨À')
+91.107.175.19 - - [10/Oct/2023 16:54:31] "  üým_Ï#s%ÑØ%ECIÈ6Zìö¶«µÂ,?³ e¬dT>8VÆÝøÃÀ(|gÎþu«ó0-g, *ÚÚÀ,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:31] code 400, message Bad request version ('§ç\x00,ZZ\x13\x01\x13\x02\x13\x03À,À+Ì©À0À/Ì¨À')
+91.107.175.19 - - [10/Oct/2023 16:54:31] "  üõÇ×ÇEe¢¶Ú]5¬v!¥qG$A­#ÂÎ¹À EÐ&:ø`^£ÐìÃ¿USÑùPüÇG])ÊË¿©§ç ,ZZÀ,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:32] code 400, message Bad request syntax ('\x16\x03\x01\x00}\x01\x00\x00y\x03\x01¨Á6\x18\x88`~P\x87\x0e9^\x8aq\x90æ.µîÙR°Ï±í\x827¹Z\x1aü\x92\x00\x00\x14À')
+91.107.175.19 - - [10/Oct/2023 16:54:32] " }  y¨Á6`~P9^qæ.µîÙR°Ï±í7¹Zü  À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:32] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03\x8e1\x9dé0Ëæ±ÚbÿÅÜ¨\x9d\x182OÓ1')
+91.107.175.19 - - [10/Oct/2023 16:54:32] "  ü1é0Ëæ±ÚbÿÅÜ¨2OÓ1" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:33] code 400, message Bad request version ('á:Î>¶D)zsÊ½¹HË\x00,jj\x13\x01\x13\x02\x13\x03À,À+Ì©À0À/Ì¨À')
+91.107.175.19 - - [10/Oct/2023 16:54:33] "  üjLÜ®ØÚ.CT Ø¹¯½i#2)ºçèÔäEæùÜ u}rþÏ#4³X%ÎL á:Î>¶D)zsÊ½¹HË ,jjÀ,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:34] code 400, message Bad request version ('\x00\x00\x14À')
+91.107.175.19 - - [10/Oct/2023 16:54:34] " }  yÛ»	Ú<¥Qw[7U°!°øÂÖ$+Ýuãk   À" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:35] code 400, message Bad request version ('êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93**\x00\x00\x00')
+91.107.175.19 - - [10/Oct/2023 16:54:35] "  ü%ÔímGF`ì+RññáØë¨q/jû £3<f,dÑ<{ç¢k AÅÕÍV .@ ÜGE  êêÀ+À/À,À0Ì©Ì¨ÀÀ   / 5 **   " HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:35] code 400, message Bad request version ('Su\x10T\x1a')
+91.107.175.19 - - [10/Oct/2023 16:54:35] "  ü²ME<¥Ôªí§E* OÁÏVøu>±nÁ®µ SuT" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:35] code 400, message Bad request version ('JJ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ÊÊ\x00\x00\x00')
+91.107.175.19 - - [10/Oct/2023 16:54:35] "  ü¥½roYìJÿæ"é.Ñ¤u.PÿÙ¶ d¨ , êä]7Ú`É±_wÖM;ÒXµ/9  JJÀ+À/À,À0Ì©Ì¨ÀÀ   / 5 ÊÊ   " HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:35] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03AûÀM2jt/¢\x08¢}=\x92A\x9cFDò_(C?Õ\x9b×z©DËá5')
+91.107.175.19 - - [10/Oct/2023 16:54:35] "  üAûÀM2jt/¢¢}=AFDò_(C?Õ×z©DËá5  êR" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:36] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03\x0fçPx6')
+91.107.175.19 - - [10/Oct/2023 16:54:36] "  üçPx6	Ê7Twx±:ªúg>$ÑaC­ûüÿ" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:36] code 400, message Bad request version ('úú\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93ZZ\x00\x00Di\x00\x05\x00\x03\x02h2\x003\x00+\x00)')
+91.107.175.19 - - [10/Oct/2023 16:54:36] "  üªåëwd^7¾ñQ8{úqÝÃU¢è3I÷³ ½T©OØ&¨3¬áR¥<ÃØA¡	\ÿL-]Õ  úúÀ+À/À,À0Ì©Ì¨ÀÀ   / 5 ZZ  Di  h2 3 + )" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:36] code 400, message Bad request version ('õNË\x14O¦Ï9\x93;r(lD(Uë\x866\x82?ªzLL\x00')
+91.107.175.19 - - [10/Oct/2023 16:54:36] "  ü^UVE9¬DG,«ÿEï)Tz07b"_Ä iñð¬ H6N¼ºèw¢Î ÅpLbb¸Nòé}¶jVÞ;  êêÀ+À/À,À0Ì©Ì¨ÀÀ   / 5 úú        ÿ     h2http/1.1 3 + )     wÇòd°õNËO¦Ï9;r(lD(Uë6?ªzLL " HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:54:36] code 400, message Bad request version ('êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x01\x93**\x00\x00\x00')
+91.107.175.19 - - [10/Oct/2023 16:54:36] "  ü­8ë®}mü\=HÉ ãÕì§©=Ñ¢Bø `Æf«ÝµÔï&Ïµ¶Pw²ÄêyS|~ËÁù  êêÀ+À/À,À0Ì©Ì¨ÀÀ   / 5 **   " HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:55:33] code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x003\x00+\x00)')
+91.107.175.19 - - [10/Oct/2023 16:55:33] "  ü Np>·?¿%gKÍ|´à<¶<sô¦ÅàWO:÷¢ ý¯]RxvgºêKÆi.¿¹rßçqBZSdr  ÊÊÀ+À/À,À0Ì©Ì¨ÀÀ   / 5 úú        h2http/1.1    #      + ZZ    3 + )" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:55:33] code 400, message Bad request version ('\x00\x14\x00\x12\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x02\x01\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
+91.107.175.19 - - [10/Oct/2023 16:55:33] "  ü]¬pgþ¼¿ XkEÄö"Ù%\Ô¸ÆZù ó+ûdIüË¢>¶ìL£²1_/2gÆÐ?  À+À/À,À0Ì©Ì¨ÀÀ   / 5 ZZ            " HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:55:33] code 400, message Bad request version ('£Qø\x90]ªg\x9ag\x95\x1aWvÈ¤\x89²¹')
+91.107.175.19 - - [10/Oct/2023 16:55:33] "  ü>>Ë [4í¶6A ñüìIy·M]N5óÒhsÚ E%Wnó¡dè £Qø]ªggWvÈ¤²¹" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:55:33] code 400, message Bad request version ('\x9dÜN®c9³9µB\x91Ì\x1bP_\x16\x99Ä°\x08h0v\x00\x12\x00\x00\x00')
+91.107.175.19 - - [10/Oct/2023 16:55:33] "  üÄ8Ü|H8pTbø¬_êÛ+õÂí<ðZJÿþìL ñut;6ê(=%ÒßbÖ!jfM§[O6³ï§zÄ  À+À/À,À0Ì©Ì¨ÀÀ   / 5 ÚÚ     h2http/1.1Di  h2         ÿ   3 + )JJ     å¬&ÒÍt¬ÜN®c9³9µBÌP_Ä°h0v    " HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:55:33] code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00\x12\x00\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
+91.107.175.19 - - [10/Oct/2023 16:55:33] "  ü¾äj%ÃöRü­ûÝp«Zµñ$þPVJV÷·~ ØF0 v°Rò´«z<à´DY®º¶*ïõû­  zzÀ+À/À,À0Ì©Ì¨ÀÀ   / 5 **        h2http/1.1 3 + )jj     ¶]¼vèÏßQNÆBi¨ýX²ÖÒ2êi>Aæìy>             " HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:55:33] code 400, message Bad request version ('5êz\x8c°Ôwô')
+91.107.175.19 - - [10/Oct/2023 16:55:33] "  üÏ-Ò5ãØ?Ã¦ ±TsÖ# ÒG¢O@þ»ÿ ¢Z7öê¤¤º$5êz°Ôwô" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:55:33] code 400, message Bad request version ('B^n0\x17Ô\\\x19ê-')
+91.107.175.19 - - [10/Oct/2023 16:55:33] "  üp7m8ßò|°e^oSøÏ,ª^ä³ä·Áüô 5B^n0Ô\ê-" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:55:34] code 400, message Bad request version ('\x00\x02\x01\x00\x00\x1b\x00\x03\x02\x00\x02\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
+91.107.175.19 - - [10/Oct/2023 16:55:34] "  üö/¨>¾¶Gð«Êç/eÜ¶Gç)s5 ßj8æ/*R±´.~<-På='÷8^<r  JJÀ+À/À,À0Ì©Ì¨ÀÀ   / 5 JJ      - Di  h2 3 + )ÚÚ     õÏ9ôß:³ó¿ÉyÌBjraA°âÌÍU%}i      h2http/1.1ÿ               " HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:55:34] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03B¢ÐÚ\x07\x89\x02ï÷PíÎ$lü\x002m\x89\x14Ö\x87ùª:ÞÞMnAë\x0e')
+91.107.175.19 - - [10/Oct/2023 16:55:34] "  üB¢ÐÚï÷PíÎ$lü 2mÖùª:ÞÞMnAë ä«p[(7" HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:55:34] code 400, message Bad request version ('\x00\x02\x01\x00\x00')
+91.107.175.19 - - [10/Oct/2023 16:55:34] "  üB ·ËÑÜÐ}}UÁú¥à2Kà¤r®e å±µ}÷_7ÅË|y_bBI,Y|µÑBö  À+À/À,À0Ì©Ì¨ÀÀ   / 5 úú   -        3 + )     B^®ÌðhñX}Õ¤µTº­³£gxrPmøàj6qg    #      +     " HTTPStatus.BAD_REQUEST -
+91.107.175.19 - - [10/Oct/2023 16:55:34] code 400, message Bad request version ('\x02h2\x08http/1.1\x003\x00+\x00)')
+91.107.175.19 - - [10/Oct/2023 16:55:34] "  üeÄ \º»H®(¹q0]öîîN+n´Aø>"p nÏÎút6G0[iÙ=§ÜÔø(+  ªªÀ+À/À,À0Ì©Ì¨ÀÀ   / 5 ZZ   + jjDi  h2 #     h2http/1.1 3 + )" HTTPStatus.BAD_REQUEST -
+127.0.0.1 - - [10/Oct/2023 16:56:30] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:56:30] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:56:30] "GET /api/v1/balance?userId=1339723882&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:56:30] "GET /api/v1/transaction?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:56:30] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:56:30] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:56:30] "GET /api/v1/balance?userId=1339723882&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:56:30] "GET /api/v1/transaction?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:56:44] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:56:44] "GET /api/v1/transaction?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:56:45] "GET /api/v1/balance?userId=1339723882&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:56:45] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:56:57] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:57:01] "POST /api/v1/pay HTTP/1.0" 500 -
+127.0.0.1 - - [10/Oct/2023 16:57:02] "GET /api/v1/user?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:57:02] "GET /api/v1/balance?userId=1339723882&chat=-2425203294547552023 HTTP/1.0" 200 -
+127.0.0.1 - - [10/Oct/2023 16:57:02] "POST /api/v1/user HTTP/1.0" 409 -
+127.0.0.1 - - [10/Oct/2023 16:57:02] "GET /api/v1/transaction?chat=-2425203294547552023&userId=1339723882 HTTP/1.0" 200 -
+Error on request:
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/werkzeug/serving.py", line 335, in run_wsgi
+    execute(self.server.app)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/werkzeug/serving.py", line 322, in execute
+    application_iter = app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 2551, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 2531, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask_restful/__init__.py", line 298, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask_restful/__init__.py", line 298, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask_cors/extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask_restful/__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask/views.py", line 107, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/flask_restful/__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/ubuntu/telewise/telewise/backend/resources/pay.py", line 71, in post
+    update_balance(requested_chat, requested_payer_user, requested_receiver_user, body['amount'])
+  File "/home/ubuntu/telewise/telewise/backend/resources/pay.py", line 21, in update_balance
+    balance.amount -= amount
+TypeError: unsupported operand type(s) for -=: 'int' and 'str'
