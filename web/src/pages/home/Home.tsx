@@ -8,6 +8,7 @@ import {
   useInitData,
   ThemeParams,
   useThemeParams,
+  useExpand,
 } from "@vkruglikov/react-telegram-web-app";
 import {
   CustomerServiceOutlined,
@@ -66,7 +67,11 @@ export const Home = () => {
   const handleSettleUp = () => {
     navigate("/pay");
   };
+  const [isExpanded, expand] = useExpand();
 
+  useEffect(() => {
+    expand();
+  }, []);
   return (
     <>
       <div className={styles.header}>
@@ -80,7 +85,7 @@ export const Home = () => {
           Settle up
         </Button>
         <div className={styles.value_container}>
-          <p>+{balanceAmount} $</p>
+          <p>{balanceAmount} $</p>
           <p>{balanceAmount > 0 ? "You owe" : "You lent"}</p>
         </div>
       </div>

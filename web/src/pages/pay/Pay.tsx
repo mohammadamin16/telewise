@@ -18,6 +18,7 @@ import {
 } from "../../core/api";
 import { useUserData } from "../../hooks/useUserData";
 import { MainButton } from "@vkruglikov/react-telegram-web-app";
+import { useNavigate } from "react-router-dom";
 
 const { useToken } = theme;
 
@@ -38,6 +39,7 @@ export const Pay = () => {
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAmount(e.target.value);
   };
+  const navigate = useNavigate();
   const handlePay = () => {
     pay({
       amount,
@@ -45,6 +47,7 @@ export const Pay = () => {
       receiverUserId: selectedUser?.userId!,
       userId,
     });
+    navigate("/");
   };
   return (
     <>
@@ -90,7 +93,7 @@ export const Pay = () => {
           />
         </div>
       )}
-      <MainButton text="Pay" />
+      <MainButton text="Pay" onClick={handlePay} />
     </>
   );
 };
