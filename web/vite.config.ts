@@ -8,7 +8,7 @@ export default defineConfig({
     proxy: {
       "/api/v1": {
         target: "https://amintootoonchi.ir",
-        changeOrigin: true,
+        // changeOrigin: true,
       },
     },
   },

@@ -90,7 +90,7 @@ export const Pay = () => {
           />
         </div>
       )}
-      {/* <MainButton text="Pay" color="red" /> */}
+      <MainButton text="Pay" />
     </>
   );
 };

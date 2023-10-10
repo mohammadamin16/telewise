@@ -5,7 +5,7 @@ export const useUserData = () => {
 
   return {
     userId: initDataUnsafe.user?.id.toString() || "1",
-    name: initDataUnsafe.user?.first_name || "testName",
-    chatId: initDataUnsafe.chat_instance || "-1",
+    name: initDataUnsafe.user?.first_name || "testName2",
+    chatId: initDataUnsafe.chat_instance || "-10",
   };
 };

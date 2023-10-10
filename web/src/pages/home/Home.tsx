@@ -39,7 +39,7 @@ export const Home = () => {
   const [balances, setBalances] = useState<ApiBalance[]>([]);
   const balanceAmount = useMemo(() => {
     let amount = 0;
-    balances.map((b) => {
+    balances?.map?.((b) => {
       amount += b.amount;
     });
     return amount;
