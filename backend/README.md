@@ -1,15 +1,8 @@
-# Download & Start mongodb
+# ‌Backend
 
-sudo apt install mongodb
-sudo service mongodb start
+Project explanation:
 
-# Download & install & Activate virtualenv
-
-pip3 install virtualenv
-virtualenv venv
-source ./venv/bin/activate
-
-# Download & Install requirements of app & run app
-
-pip3 install -r requirements.txt
-python3 ./app.py --command run
+* [How to Setup](https://github.com/mohammadamin16/telewise/tree/main/backend/documentation/setup.md)
+* [Project Structure](https://github.com/mohammadamin16/telewise/tree/main/backend/documentation/structure.md)
+* [APIs explained](https://github.com/mohammadamin16/telewise/tree/main/backend/documentation/apis.md)
+* [Roadmap](https://github.com/mohammadamin16/telewise/tree/main/backend/documentation/roadmap.md)
