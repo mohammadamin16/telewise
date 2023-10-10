@@ -85,7 +85,7 @@ export const Home = () => {
         </div>
       </div>
       <div className={styles.list}>
-        {transactions.map((t) => (
+        {transactions?.map?.((t) => (
           <Transaction
             transction={t}
             key={t.transactionId}
