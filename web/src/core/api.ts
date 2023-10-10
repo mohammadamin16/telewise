@@ -1,8 +1,10 @@
 import axios from "axios";
+import { json } from "react-router-dom";
 // const BASE_URL = "http://localhost:5001/api/v1";
-const BASE_URL = "/api/v1";
+// const BASE_URL = "/api/v1";
+const BASE_URL = "http://188.121.116.20:5001/api/v1";
 
-export const pingServer = () => {
+export const resetServer = () => {
   axios
     .get(BASE_URL + "/")
     .then(function (response) {
@@ -13,61 +15,42 @@ export const pingServer = () => {
     });
 };
 export const registerUser = (chatId: string, userId: string, name: string) => {
-  axios
-    .post(BASE_URL + "/user", {
-      chat: chatId,
-      userId: userId,
-      name: name,
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  return axios.post(BASE_URL + "/user", {
+    chat: chatId,
+    userId: userId,
+    name: name,
+  });
 };
 
-export const getTransaction = () => {
-  axios
-    .get(BASE_URL + "/transaction", {
-      data: { chat: "1" },
-      //   data: {
-      //     chat: "1",
-      //     userId: "1003",
-      //   },
-    })
-    .then(function (response) {
-      console.log("getTransaction", response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+export const getUsers = (chatId: string, userId: string) => {
+  const jsonData = { chat: chatId, userId: userId };
+  return axios(BASE_URL + "/user", {
+    params: jsonData,
+    method: "get",
+  });
 };
 
-export const getBalance = () => {
-  axios
-    .get(BASE_URL + "/balance", {
-      params: {},
-      //   data: {
-      //     chat: "1",
-      //     userId: "1003",
-      //   },
-    })
-    .then(function (response) {
-      console.log("getTransaction", response.data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+export const getTransaction = (chatId: string, userId: string) => {
+  return axios.get(BASE_URL + "/transaction", {
+    params: { chat: chatId, userId: userId },
+  });
 };
 
-export const pay = () => {
+export const getBalance = (chatId: string, userId: string) => {
+  return axios.get(BASE_URL + "/balance", {
+    params: { userId, chat: chatId },
+  });
+};
+
+export const pay = (data: {
+  chat: string;
+  userId: string;
+  amount: string;
+  receiverUserId: string;
+}) => {
   axios
     .post(BASE_URL + "/pay", {
-      userId: "1001",
-      chat: "1",
-      amount: 100,
-      receiverUserId: "1003",
+      ...data,
     })
     .then(function (response) {
       console.log("pay", response);
