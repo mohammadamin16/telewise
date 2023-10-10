@@ -1,5 +1,5 @@
 # build environment
-FROM node:18.17.1 as build
+FROM node:latest as build
 WORKDIR .
 COPY  package.json .
 COPY yarn.lock .
@@ -12,5 +12,5 @@ FROM nginx:stable-alpine
 COPY --from=build dist /usr/share/nginx/html
 # new
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 80
+EXPOSE 40 
 CMD ["nginx", "-g", "daemon off;"]

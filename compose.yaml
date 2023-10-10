@@ -3,7 +3,7 @@ services:
    web:
      build: web
      ports:
-       - "80:80"
+       - "40:40"
 #   backend:
 #     build: backend
 #     ports:
@@ -18,3 +18,4 @@ services:
 #       - mongodb_data:/data/db
 # volumes:
 #   mongodb_data:
+#
